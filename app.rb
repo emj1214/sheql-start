@@ -32,7 +32,7 @@ configure do
   logger.level = Logger::DEBUG
 
 
-  set :no_auth_neededs, ['/login', '/authenticate', '/authenticated']
+  set :no_auth_neededs, ['/login', '/authenticate', '/authenticated', '/graduation']
 
   set :logger, logger
   
@@ -41,7 +41,7 @@ configure do
     Google::Apis::ClientOptions.default.application_name = 'SheQL'
     Google::Apis::ClientOptions.default.application_version = '1.0.0'
 
-    client_secrets = Google::APIClient::ClientSecrets.load
+    client_secrets = Google::APICLientSecrets.load rescue Google::APIClient::ClientSecrets.new(JSON.parse(ENV[‘CLIENT_SECRETS’]))
     authorization = client_secrets.to_authorization
     authorization.scope = 'openid email profile'
 
