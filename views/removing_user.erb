@@ -4,9 +4,12 @@
 <div class="accordion-headline">
 <h4>Remove <%= @user.name %> from band</h4>
 </div>                                       
-<div class="accordion-content" method="PATCH">
+<div class="accordion-content" >
 <p>Are you sure?</p> 
-<p><a href="/removing/<%= @user.id %>/<%= @band.id %>">yes</a></p>
+<form method="POST" action="/removing/<%= @user.id %>/<%= @band.id %>">
+    <p><input type="submit" value="yes"></p>
+</form>
+
 <p><a href="/">no</a></p>
 </div>
 </div>

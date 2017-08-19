@@ -17,8 +17,8 @@
                                         <div class="accordion-content">
                                         
                                             <p><%= song.content %></p> 
-                                            <% binding.pry %>
-                                            <p><a href="/band_profile/<%= song.band.id %>"><%= song.band.name %></a></p>
+                                            
+                                            <p><a href="/band_profile/<%= song.band_id %>"><%= Band.find(song.band_id).name %></a></p>
                                             
                                         </div>
                                     </div>
@@ -35,4 +35,5 @@
 <p>
    <a class="button" href="/bands">Bands</a>
    <a class="button" href="/users">Users</a>
+   <a class="button" href="/graduation">Link to Blog for Graduation!!!</a>
 </p>

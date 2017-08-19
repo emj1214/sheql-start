@@ -56,16 +56,17 @@ get "/users/:user_id/remove_from_:id" do
   erb :"removing_user"
 end
 
-patch "/removing/:user_id/:band_id" do
+post "/removing/:user_id/:band_id" do
   user_id = params[:user_id].to_i
   band_id = params[:band_id].to_i
-  @user = User.find(user_id)
-  @band = Band.find(band_id)
-  @band.to_a - [@user]
-  @band.save
-  @user.save
+  bands_users = BandsUser.where(["user_id = ? and band_id = ?", user_id, band_id])
+  bands_users.each do |bu|
+    bu.destroy
+  end
   redirect to("/stuff_was_saved")
 end
+
+User.where(["name = ? and email = ?", "Joe", "joe@example.com"])
 
 get "/join_band" do
   erb :"join_band"
