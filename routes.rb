@@ -66,8 +66,6 @@ post "/removing/:user_id/:band_id" do
   redirect to("/stuff_was_saved")
 end
 
-User.where(["name = ? and email = ?", "Joe", "joe@example.com"])
-
 get "/join_band" do
   erb :"join_band"
 end
