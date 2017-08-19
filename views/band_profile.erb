@@ -1,0 +1,19 @@
+<h2><%= @band.name %></h2>
+                            <ul>
+                            <% @songs.each do |song| %>    
+                                <li>
+                                    <div class="accordion round-corners light-blue-background">
+                                        <div class="accordion-headline">
+                                            <h4><%= song.name %></h4>
+                                        </div>
+                                        <div class="accordion-content">
+                                            <%= song.content %>
+                                        </div>
+                                    </div>
+                                </li>
+                                <% end %>
+                            </ul>
+                    
+                    <p>
+                        <a class="button" href="/band_members/<%= @band.id %>">Band Members</a>
+                    </p>

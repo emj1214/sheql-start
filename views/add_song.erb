@@ -1,0 +1,9 @@
+<h2>Add a Song</h2>
+<form method="POST" action="/new_song_added/<%= @user.id %>/<%= @band.id %>">
+  <label>Song Name *</label>
+  <input type="text" placeholder="Namey Name Name" name="song_name">
+  <label>Link to Song *</label>
+  <textarea maxlength="200" name="content" rows=5>
+  </textarea>
+  <input type="submit">
+</form>

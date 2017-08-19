@@ -1,0 +1,15 @@
+
+[1mFrom:[0m /home/ubuntu/workspace/sheql-start/app.rb @ line 57 Object#user_credentials:
+
+    [1;34m53[0m: [32mdef[0m [1;34muser_credentials[0m
+    [1;34m54[0m:   [1;34m# Build a per-request oauth credential based on token stored in session[0m
+    [1;34m55[0m:   [1;34m# which allows us to use a shared API client.[0m
+    [1;34m56[0m:   @authorization ||= (
+ => [1;34m57[0m:     binding.pry
+    [1;34m58[0m:     auth = settings.authorization.dup
+    [1;34m59[0m:     auth.redirect_uri = to([31m[1;31m'[0m[31m/authenticated[1;31m'[0m[31m[0m)
+    [1;34m60[0m:     auth.update_token!(session)
+    [1;34m61[0m:     auth
+    [1;34m62[0m:   )
+    [1;34m63[0m: [32mend[0m
+

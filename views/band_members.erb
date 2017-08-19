@@ -1,0 +1,7 @@
+<h2> <%= @band.name%>'s Members </h2>
+<ul>
+<% @band_members.each do |user| %>
+    <li><a href="/users/<%= user.id %>"><%= user.name %></a></li>
+<% end %>
+</ul>
+

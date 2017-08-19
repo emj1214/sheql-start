@@ -408,3 +408,8 @@ get '/logout' do
 end
 
 ```
+rails generate migration add_fieldname_to_tablename fieldname:string
+
+rails generate migration add_picture_to_users picture:binary
+
+rails generate migration addPictureToUsers

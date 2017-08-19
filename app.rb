@@ -20,7 +20,7 @@ set :session_secret, ENV.fetch('SESSION_SECRET') { SecureRandom.hex(64) }
 def logger; settings.logger end
 
 def no_authentication?
-  true
+  false
 end
 
 configure do
@@ -35,6 +35,30 @@ configure do
   set :no_auth_neededs, ['/login', '/authenticate', '/authenticated']
 
   set :logger, logger
+  
+   # set up authorization
+  unless no_authentication?
+    Google::Apis::ClientOptions.default.application_name = 'SheQL'
+    Google::Apis::ClientOptions.default.application_version = '1.0.0'
+
+    client_secrets = Google::APIClient::ClientSecrets.load
+    authorization = client_secrets.to_authorization
+    authorization.scope = 'openid email profile'
+
+    set :authorization, authorization
+  end
+end
+
+# this is the new code to add
+def user_credentials
+  # Build a per-request oauth credential based on token stored in session
+  # which allows us to use a shared API client.
+  @authorization ||= (
+    auth = settings.authorization.dup
+    auth.redirect_uri = to('/authenticated')
+    auth.update_token!(session)
+    auth
+  )
 end
 
 def logged_in?

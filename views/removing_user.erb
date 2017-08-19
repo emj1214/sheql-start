@@ -1,0 +1,12 @@
+<h2>Removing <%= @user.name %> </h2>
+
+<div class="accordion round-corners light-blue-background">
+<div class="accordion-headline">
+<h4>Remove <%= @user.name %> from band</h4>
+</div>                                       
+<div class="accordion-content" method="PATCH">
+<p>Are you sure?</p> 
+<p><a href="/removing/<%= @user.id %>/<%= @band.id %>">yes</a></p>
+<p><a href="/">no</a></p>
+</div>
+</div>

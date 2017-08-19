@@ -1,0 +1,53 @@
+ <section id="forms">
+                    <div class="container">
+                        <div class="full-width">
+                            <div class="small-padding">
+                                <h2 class="blue-underline small-bottom-padding">Create a Band</h2>
+                            </div>
+                        </div>
+                        <div class="third">
+                            <div class="small-padding">
+                                <h3>Fill Out This Form</h3>
+                                <form method="post" action="/headed_home/<%= @user.id %>">
+                                
+                                    <p>Do not include yourself. We automatically threw you into your band. You're welcome.</p>
+                                    <p>Also, if you are going to add someone to your band, they must have already signed into WeB3 before.</p>
+                                    <label>Band Name *</label>
+                                    <input type="text" placeholder="Jane Does" name="band_name">
+                                  
+                                    <label>Member Email </label>
+                                    <input type="email" placeholder="Jane.Doe@example.com" name="email1">
+                                    
+                                    <label>Member Email </label>
+                                    <input type="email" placeholder="Jane.Doe@example.com" name="email2">
+                                    
+                                    <label>Member Email </label>
+                                    <input type="email" placeholder="Jane.Doe@example.com" name="email3">
+                                    
+                                    <label>Member Email </label>
+                                    <input type="email" placeholder="Jane.Doe@example.com" name="email4">
+                                    
+                                    <label>Member Email </label>
+                                    <input type="email" placeholder="Jane.Doe@example.com" name="email5">
+                                    
+                                    <label>Member Email </label>
+                                    <input type="email" placeholder="Jane.Doe@example.com" name="email6">
+                                    
+                                    <label>Member Email </label>
+                                    <input type="email" placeholder="Jane.Doe@example.com" name="email7">
+                                    
+                                    
+                                    <p>Note: if you have more than one band member, you MUST put their email to include them.</p>
+                                    
+                                    <label>Do you like cats? </label><br>
+                                    <label><input name="do_you_like_cats" type="radio"> Yes</label><br>
+                                    <label><input name="do_you_like_cats" type="radio"> No</label><br>
+                                    
+                                    <label><input type="checkbox" class="top-margin"> Check if you like dogs more than cats.</label><br>
+                                    
+                                    <input type="submit" value= "Submit">
+                                    
+                                </form>
+                            </div>
+                        </div>
+        <section>

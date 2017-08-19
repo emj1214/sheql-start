@@ -1,0 +1,6 @@
+<h2>Select Band</h2>
+<ul>
+<% @bands.reverse.each do |band| %>
+    <li><a href="/band_profile/<%= @user.id %>/<%= band.id %>"><%= band.name %></a></li>
+<% end %>
+</ul>
