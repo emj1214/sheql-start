@@ -37,31 +37,31 @@ configure do
   set :logger, logger
   
    # set up authorization
-  #unless no_authentication?
-    #Google::Apis::ClientOptions.default.application_name = 'SheQL'
-    #Google::Apis::ClientOptions.default.application_version = '1.0.0'
-
-    #client_secrets = Google::APICLientSecrets.load rescue Google::APIClient::ClientSecrets.new(JSON.parse(ENV['CLIENT_SECRETS']))
-    #authorization = client_secrets.to_authorization
-   # authorization.scope = 'openid email profile'
-
-  #  set :authorization, authorization
- # end
-#end
-
-# set up authorization
   unless no_authentication?
     Google::Apis::ClientOptions.default.application_name = 'SheQL'
     Google::Apis::ClientOptions.default.application_version = '1.0.0'
 
-    client_secrets = Google::APIClient::ClientSecrets.load
+    client_secrets = Google::APICLientSecrets.load rescue Google::APIClient::ClientSecrets.new(JSON.parse(ENV['CLIENT_SECRETS']))
     authorization = client_secrets.to_authorization
     authorization.scope = 'openid email profile'
 
     set :authorization, authorization
   end
-
 end
+
+# set up authorization
+  #unless no_authentication?
+   # Google::Apis::ClientOptions.default.application_name = 'SheQL'
+    #Google::Apis::ClientOptions.default.application_version = '1.0.0'
+
+    #client_secrets = Google::APIClient::ClientSecrets.load
+    #authorization = client_secrets.to_authorization
+    #authorization.scope = 'openid email profile'
+
+    #set :authorization, authorization
+  #end
+
+#end
 
 # this is the new code to add
 def user_credentials
