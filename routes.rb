@@ -109,7 +109,7 @@ post "/new_song_added/:user_id/:band_id" do
   @user = User.find(user_id)
   @band = Band.find(band_id)
   @song = Song.create(name: params["song_name"], content: params["content"], date: Date.today, band: @band)
-  @user.bands << @band
+
   @user.save
   redirect to("/stuff_was_saved")
 end
