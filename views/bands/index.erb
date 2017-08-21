@@ -1,6 +1,6 @@
 <h2>Bands</h2>
 <ul>
 <% @bands.each do |band| %>
-  <li><a href="/bands/<%= band.id %>"><%= band.name %>!</a></li>
+  <li><a href="/band_profile/<%= band.id %>"><%= band.name %>!</a></li>
 <% end %>
 </ul>
